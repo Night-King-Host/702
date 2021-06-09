@@ -147,6 +147,7 @@ function setupRW() {
 					'<td align="center" colspan="3" >'+
 					'<a href="#" id="goldhen10" class="button" onclick="toggle_payload(\'goldhen10\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.0</a>&nbsp;'+
 					'<a href="#" id="goldhen11" class="button" onclick="toggle_payload(\'goldhen11\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.1</a>&nbsp;'+
+					'<a href="#" id="orbistoolbox" class="button" onclick="toggle_payload(\'orbistoolbox\'); return false" style="background-color:orangered;color:white;width:29%">Orbis-ToolBox</a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
 					'<tr>'+
