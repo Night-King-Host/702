@@ -32,22 +32,48 @@
   animation-name: animatetop;
   animation-duration: 0.4s
 }
-		.button {
-		  background-color: white;  
-		  border-radius: 5px;
-		  color: white;
-		  padding: .5em;
-		  text-decoration: none;
-		  height:100%;
-		  display:inline-table;
-		  font-family: system-ui;
-		}
-
-		.button:focus,
-		.button:hover {
-			box-shadow: 0 5px 50px 0 white;
-            color: white;
-            border-radius: 10px;}
+.button {
+background-color: white;  
+border-radius: 5px;
+border: 2px solid black;
+color: #4863A0;
+padding: .5em;
+text-decoration: none;
+display:inline-table;
+font-family: system-ui;
+font-size: 20px;
+text-align: center;
+width: 200px;
+height: 25px; 
+}
+.button:focus,
+.button:hover {
+box-shadow: 0 5px 50px 0 white;
+color: #4863A0;
+border-radius: 10px;
+cursor: pointer;
+}
+.temp {
+          background-color: white;  
+          border-radius: 5px;
+          border: 2px solid black;
+          color: white;
+          padding: .5em;
+          text-decoration: none;
+          display:inline-table;
+          font-family: system-ui;
+          font-size: 20px;
+          text-align: center;
+          width: 50px;
+          height: 25px; 
+          
+            }
+    
+        .temp:focus,
+        .temp:hover {
+        box-shadow: 0 5px 50px 0 white;
+        color: white;
+        border-radius: 10px;}
 
 		.titlehead {
 		  background-color: black;  
@@ -194,7 +220,7 @@
 
 	</style>
 	<head>
-		<title>Night King 7.02 FW Auto V1.1 (DMVC Style)</title>
+		<title>Night King 7.02 FW Auto V1.2</title>
 		<script>
 			window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Page Caching Started!!";localStorage.is702Cached=false;};
 			window.applicationCache.onprogress=function(a){document.getElementById("myBar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";document.getElementById("myBar").innerHTML=(Math.round(100*(a.loaded/a.total)))+"%";};
@@ -241,7 +267,7 @@
 		<h1 id="myProgress">
 		  <div id="myBar">0%</div>
 		</h1>
-		<table id="load" align="center" style="width:600px;margin-top:30px;">
+		<table id="load" align="center" style="width:1300px;margin-top:20px;">
 		</table>
 	</body>
 </html>

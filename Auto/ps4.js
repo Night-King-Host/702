@@ -128,63 +128,84 @@ function setupRW() {
 	if(!read64(g_jsview_butterfly.sub(16)).equals(new Int64("0xffff000000001337"))){
 		localStorage.failcount = ++localStorage.failcount;window.failCounter.innerHTML=localStorage.failcount;
         die("[!] Failed to setup addrof/fakeobj primitives");}
-	/* Getting code execution */
-	/* ... */
-	//startLoad();
-	document.getElementById("myProgress").remove();
+
+	        document.getElementById("myProgress").remove();
             document.getElementById('load').innerHTML='<tr>'+
 			        '<td align="center" colspan="2" >'+
-			        '<a href="#" class="button" onclick="load_payload();" style="background-color:white;color:#4863A0;width:100%">Run Selected Payload(s)</a>&nbsp;'+
+			        '<a href="#" class="button pointer" onclick="load_payload();" style="background-color:white;color:#4863A0;width:50%">Run Selected Payload(s)</a>&nbsp;'+
 			        '</td>'+
 			        '</tr>'+
-			        '<tr>'+
-					'<td align="center" colspan="3" >'+
-					'<a href="#" id="hen" class="button" onclick="toggle_payload(\'hen\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3</a>&nbsp;'+
-					'<a href="#" id="henb" class="button" onclick="toggle_payload(\'henb\'); return false" style="background-color:white;color:#4863A0;width:29%">HEN 2.1.3b</a>&nbsp;'+
-					'<a href="#" id="spoof" class="button" onclick="toggle_payload(\'spoof\'); return false" style="background-color:white;color:#4863A0;width:29%">FW Spoof</a>&nbsp;'+
-					'<tr><td><br/></td></tr>'+
 					'<tr>'+
-					'<td align="center" colspan="3" >'+
-					'<a href="#" id="goldhen10" class="button" onclick="toggle_payload(\'goldhen10\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.0</a>&nbsp;'+
-					'<a href="#" id="goldhen11" class="button" onclick="toggle_payload(\'goldhen11\'); return false" style="background-color:goldenrod;color:white;width:29%">GoldHEN V1.1</a>&nbsp;'+
-					'<a href="#" id="orbistoolbox" class="button" onclick="toggle_payload(\'orbistoolbox\'); return false" style="background-color:orangered;color:white;width:29%">Orbis-ToolBox</a>&nbsp;'+
+			        '<td align="center" colspan="5">'+
+			        '<br/><div style=font-size:16px;text-align:center;color:white;>Set Fan Treshold The PS4 default temp is 79c</div>'+
+					'<a href="#" id="fan50" class="temp" onMouseOver="progress.innerHTML=\'Fan Control Set Temp 50c\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'fan50\'); return false" style="font-size:15px;text-align:center;color:#5B90F6">50c</a>&nbsp;'+
+			        '<a href="#" id="fan55" class="temp" onMouseOver="progress.innerHTML=\'Fan Control Set Temp 55c\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'fan55\'); return false" style="font-size:15px;text-align:center;color:#5B90F6">55c</a>&nbsp;'+
+			        '<a href="#" id="fan60" class="temp" onMouseOver="progress.innerHTML=\'Fan Control Set Temp 60c\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'fan60\'); return false" style="font-size:15px;text-align:center;color:#ff7f7f">60c</a>&nbsp;'+
+			        '<a href="#" id="fan65" class="temp" onMouseOver="progress.innerHTML=\'Fan Control Set Temp 65c\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'fan65\'); return false" style="font-size:15px;text-align:center;color:#ff4c4c">65c</a>&nbsp;'+
+			        '<a href="#" id="fan70" class="temp" onMouseOver="progress.innerHTML=\'Fan Control Set Temp 70c\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'fan70\'); return false" style="font-size:15px;text-align:center;color:#ff4c4c">70c</a>&nbsp;'+
+			        '<a href="#" id="fan75" class="temp" onMouseOver="progress.innerHTML=\'Fan Control Set Temp 75c\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'fan75\'); return false" style="font-size:15px;text-align:center;color:#ff4c4c">75c</a>&nbsp;'+
+			        '</td>'+
+			        '</tr>'+
+			        '<tr id="mexp">'+
+			        '<td align="center" id="jailbreak" colspan="5" >'+
+                    '<br/><div style=font-size:20px;text-align:center;color:yellow;>MIRA / HEN / GOLDHEN</div>'+
+			        '<a href="#" id="hen" class="button pointer" onMouseOver="progress.innerHTML=\'HEN 2.1.3 By SiSTRo\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'hen\'); return false">HEN 2.1.3</a>&nbsp;'+
+			        '<a href="#" id="henb" class="button pointer" onMouseOver="progress.innerHTML=\'HEN 2.1.3b By Leeful\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'henb\'); return false">HEN 2.1.3b</a>&nbsp;'+
+			        '<a href="#" id="spoof" class="button pointer" onMouseOver="progress.innerHTML=\'Spoof to 9.99\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'spoof\'); return false">Spoofer 9.99</a>&nbsp;'+
+			        '<a href="#" id="goldhen10" class="button pointer" onMouseOver="progress.innerHTML=\'GoldHen v1.0 by SiSTRo\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'goldhen10\'); return false" style="background-color: goldenrod;color: white">GoldHEN V1.0</a>&nbsp;'+
+			        '<a href="#" id="goldhen11" class="button pointer" onMouseOver="progress.innerHTML=\'GoldHen v1.1 by SiSTRo\'"; onmouseout="progress.innerHTML=\'Night King 7.5X FW Full Auto V1.1\'" onclick="toggle_payload(\'goldhen11\'); return false" style="background-color: goldenrod;color: white">GoldHEN V1.1</a>&nbsp;'+
+			        '</td>'+
+			        '</tr>'+
+			        '<br/>'+
+			        '<tr>'+
+					'<td align="center" colspan="5">'+
+                    '<br/><div style=font-size:20px;text-align:center;color:yellow;>PAYLOADS</div>'+
+					'<a href="#" id="orbistoolbox" class="button pointer" onMouseOver="progress.innerHTML=\'OSM Orbis ToolBox Alpha Build 1167\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'orbistoolbox\'); return false" style="background-color: orangered;color: white">Orbis-ToolBox</a>&nbsp;'+
+			        '<a href="#" id="ps4trainer" class="button pointer" onMouseOver="progress.innerHTML=\'PS4 Offline Trainer\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="load_trainer(); return false" style="background-color: green;color: white">PS4 Offline Trainer</a>&nbsp;'+
+			        '<a href="#" id="webrte" class="button pointer" onMouseOver="progress.innerHTML=\'WebRTE Payload to enable cheats using PS4 Trainer\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'webrte\'); return false" style="background-color: blue;color: white">WebRTE</a>&nbsp;'+
+                    '<a href="#" id="binloader" class="button pointer" onMouseOver="progress.innerHTML=\'Bin Loader\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'binloader\'); return false">Bin-Loader</a>&nbsp;'+
+			        '<a href="#" id="app2usb" class="button pointer" onMouseOver="progress.innerHTML=\'App to USB\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'app2usb\'); return false">App-2-USB</a>&nbsp;'+
 					'</td>'+
 					'</tr>'+
+					'<br/>'+
 					'<tr>'+
-					'<td colspan="3" align="center"><hr><br></td>'+
+					'<td align="center" colspan="5">'+
+					'<a href="#" id="disableupdates" class="button pointer" onMouseOver="progress.innerHTML=\'Disable Updates\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'disableupdates\'); return false">Disable-Updates</a>&nbsp;'+
+			        '<a href="#" id="enableupdates" class="button pointer" onMouseOver="progress.innerHTML=\'Enable Updates\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'enableupdates\'); return false">Enable-Updates</a>&nbsp;'+
+					'<a href="#" id="backup" class="button pointer" onMouseOver="progress.innerHTML=\'Backup database\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'backup\'); return false">Back-Up</a>&nbsp;'+
+					'<a href="#" id="restore" class="button pointer" onMouseOver="progress.innerHTML=\'Restore database\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'restore\'); return false">Restore</a>&nbsp;'+
+					'<a href="#" id="ftp" class="button pointer" onMouseOver="progress.innerHTML=\'FTP server\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'ftp\'); return false">FTP</a>&nbsp;'+
+					'</td>'+
 					'</tr>'+
+					'<br/>'+
 					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="app2usb" class="button" onclick="toggle_payload(\'app2usb\'); return false" style="background-color:white;color:#4863A0;width:29%">App2USB</a>&nbsp;'+
-					'<a href="#" id="binloader" class="button" onclick="toggle_payload(\'binloader\'); return false" style="background-color:white;color:#4863A0;width:29%">Bin Loader</a>&nbsp;'+
-					'<a href="#" id="ps4debug" class="button" onclick="toggle_payload(\'ps4debug\'); return false" style="background-color:white;color:#4863A0;width:29%">PS4Debug</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
+					'<td align="center" colspan="5">'+
+					'<a href="#" id="moduledumper" class="button pointer" onMouseOver="progress.innerHTML=\'Kernel Module Dumper\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'moduledumper\'); return false">Module-Dumper</a>&nbsp;'+
+					'<a href="#" id="kerneldumper" class="button pointer" onMouseOver="progress.innerHTML=\'Kernel Dumper\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'kerneldumper\'); return false">Kernel-Dumper</a>&nbsp;'+
+					'<a href="#" id="dumper" class="button pointer" onMouseOver="progress.innerHTML=\'Games Dumper\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'dumper\'); return false">Games-Dumper</a>&nbsp;'+
+					'<a href="#" id="todex" class="button pointer" onMouseOver="progress.innerHTML=\'Enable DEX\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'todex\'); return false">To-DEX</a>&nbsp;'+
+					'<a href="#" id="disableaslr" class="button pointer" onMouseOver="progress.innerHTML=\'Disable Aslr\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'disableaslr\'); return false">Disable-Aslr</a>&nbsp;'+
+					'</td>'+
+					'</tr>'+
+					'<br/>'+
 					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="disableupdates" class="button" onclick="toggle_payload(\'disableupdates\'); return false" style="background-color:white;color:#4863A0;width:29%">Disable Updates</a>&nbsp;'+
-					'<a href="#" id="enableupdates" class="button" onclick="toggle_payload(\'enableupdates\'); return false" style="background-color:white;color:#4863A0;width:29%">Enable Updates</a>&nbsp;'+
-					'<a href="#" id="ftp" class="button" onclick="toggle_payload(\'ftp\'); return false" style="background-color:white;color:#4863A0;width:29%">FTP</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="dumper" class="button" onclick="toggle_payload(\'dumper\'); return false" style="background-color:white;color:#4863A0;width:29%">Dumper</a>&nbsp;'+
-					'<a href="#" id="moduledumper" class="button" onclick="toggle_payload(\'moduledumper\'); return false" style="background-color:white;color:#4863A0;width:29%">Module Dumper</a>&nbsp;'+
-					'<a href="#" id="enablebrowser" class="button" onclick="toggle_payload(\'enablebrowser\'); return false" style="background-color:white;color:#4863A0;width:29%">Enable Browser</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3">'+
-					'<a href="#" id="backup" class="button" onclick="toggle_payload(\'backup\'); return false" style="background-color:white;color:#4863A0;width:29%">Backup</a>&nbsp;'+
-					'<a href="#" id="restore" class="button" onclick="toggle_payload(\'restore\'); return false" style="background-color:white;color:#4863A0;width:29%">Restore</a>&nbsp;'+
-					'<a href="#" id="historyblocker" class="button" onclick="toggle_payload(\'historyblocker\'); return false" style="background-color:white;color:#4863A0;width:29%">History Blocker</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="renamer" class="button" onclick="toggle_payload(\'rifrenamer\'); return false" style="background-color:white;color:#4863A0;width:29%">Rif Renamer</a>&nbsp;'+
-					'<a href="#" id="todex" class="button" onclick="toggle_payload(\'todex\'); return false" style="background-color:white;color:#4863A0;width:29%">To-Dex</a>&nbsp;'+
-					'<a href="#" id="disableaslr" class="button" onclick="toggle_payload(\'disableaslr\'); return false" style="background-color:white;color:#4863A0;width:29%">Disable ASLR</a>&nbsp;</td>'+
-					'</tr><tr><td><br/></td></tr>'+
-					'<tr>'+
-					'<td align="center" colspan="3"><a href="#" id="kerneldumper" class="button" onclick="toggle_payload(\'kerneldumper\'); return false" style="background-color:white;color:#4863A0;width:29%">Kernel Dumper</a>&nbsp;'+
-					'<a href="#" id="webrte" class="button" onclick="toggle_payload(\'webrte\'); return false" style="background-color:blue;color:white;width:29%">WebRTE</a>&nbsp;'+
-					'<a href="#" id="fancontrol" class="button" onclick="toggle_payload(\'fancontrol\'); return false" style="background-color:white;color:#4863A0;width:29%">Fan Control</a>&nbsp;</td>'+
-					'</tr>';
+					'<td align="center" colspan="5">'+
+			        '<a href="#" id="enablebrowser" class="button pointer" onMouseOver="progress.innerHTML=\'Enable Browser\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'enablebrowser\'); return false">Enable-Browser</a>&nbsp;'+
+			        '<a href="#" id="historyblocker" class="button pointer" onMouseOver="progress.innerHTML=\'History Blocker\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'historyblocker\'); return false">History-Blocker</a>&nbsp;'+
+			        '<a href="#" id="linux1gb" class="button pointer" onMouseOver="progress.innerHTML=\'Linux Loader 1GB\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'linux1gb\'); return false">Linux-1GB</a>&nbsp;'+
+			        '<a href="#" id="linux3gb" class="button pointer" onMouseOver="progress.innerHTML=\'Linux Loader 3GB\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'linux3gb\'); return false">Linux-3GB</a>&nbsp;'+
+                    '<a href="#" id="kernelclock" class="button pointer" onMouseOver="progress.innerHTML=\'Reset Kernel Clock\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'kernelclock\'); return false">Kernel-Clock</a>&nbsp;'+
+                    '</td>'+
+			        '</tr>'+
+			        '<br/>'+
+			        '<tr>'+
+			        '<td align="center" colspan="4">'+
+					'<a href="#" id="rifrenamer" class="button pointer" onMouseOver="progress.innerHTML=\'Rif Renamer\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'rifrenamer\'); return false">Rif-Renamer</a>&nbsp;'+
+			        '<a href="#" id="ps4debug" class="button pointer" onMouseOver="progress.innerHTML=\'CTN PS4Debug with rest mode support\'"; onmouseout="progress.innerHTML=\'Night King 7.02 FW Auto V1.2\'" onclick="toggle_payload(\'ps4debug\'); return false">PS4Debug</a>&nbsp;'+
+					'</td>'+
+					'</tr>'+
+					'<tr><td><br/></td></tr>'+
+					'<tr>';
 	document.getElementById("div1").remove();
 }
 
@@ -201,6 +222,13 @@ function toggle_payload(pld){
 		if(pldooe!=""){document.getElementById("progress").innerHTML="Order Of Execution - "+pldooe_full.slice(0, -2);}else{document.getElementById("progress").innerHTML="Select the Payloads in its Order of Execution and Click Run..";}
 	}
 }
+
+function load_trainer(){
+	var link = document.createElement('a');
+		  document.body.appendChild(link);
+		  link.href = 'http://night-king-host.com/Trainer/index.html';
+		  link.click();
+		  }
 
 function load_payload(){
 	var pld = document.getElementById("pldooe").value;
