@@ -226,7 +226,7 @@ function toggle_payload(pld){
 function load_trainer(){
 	var link = document.createElement('a');
 		  document.body.appendChild(link);
-		  link.href = 'http://night-king-host.com/Trainer/index.html';
+		  link.href = 'http://psx4trainer.000webhostapp.com/index.html';
 		  link.click();
 		  }
 
